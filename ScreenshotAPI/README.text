@@ -1,0 +1,113 @@
+📸 Website Screenshot API
+
+A powerful and lightweight API to capture high-quality screenshots of any website using its URL. This service allows developers to generate full-page or viewport screenshots programmatically, making it ideal for automation, monitoring, and preview generation.
+
+🚀 Features
+
+* Capture screenshots from any public URL
+* Full-page and viewport screenshot options
+* Fast and reliable rendering using headless browser
+* Custom screen sizes supported
+* Simple and easy-to-use REST API
+* Handles page load delays and dynamic content
+
+🛠️ Tech Stack
+
+* Node.js
+* Express.js
+* Puppeteer (Headless Chrome)
+
+📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/screenshot-api.git
+
+# Navigate into the project
+cd ScreenshotAPI
+
+# Install dependencies
+npm install
+```
+
+⚙️ Environment Variables
+
+Create a `.env` file in the root directory and add:
+
+```env
+PORT=5000
+```
+
+▶️ Run the Server
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+node src/index.js
+```
+
+📡 API Endpoints
+
+ 🔹 Capture Screenshot
+
+**POST** `/api/screenshot`
+
+Query Parameters:
+
+| Parameter | Type   | Description       |
+| --------- | ------ | ----------------- |
+| url       | string | Website URL       |
+| fullPage  | string | Capture full page |
+| width     | number | Viewport width    |
+| height    | number | Viewport height   |
+
+Example Request:
+
+```bash
+http://localhost:5000/api/screenshot
+{
+    "url":"https://example.com",
+    "Width": 1280,
+    "Height": 800,
+    "pageSize":"full"
+}
+```
+
+Response:
+
+* Returns an image (PNG) of the website screenshot
+
+📂 Project Structure
+
+```
+src/
+│── controllers/
+│── routes/
+│── utils/
+│── index.js
+```
+💡 Use Cases
+
+* Website thumbnails & previews
+* UI testing and debugging
+* Monitoring website changes
+* Social media preview generation
+
+⚠️ Notes
+
+* Only works with publicly accessible websites
+* Some websites may block automated browsers
+* Ensure proper error handling for invalid URLs
+
+🤝 Contributing
+
+Pull requests are welcome! Feel free to open issues for suggestions or improvements.
+
+👨‍💻 Author
+
+Your Name
+GitHub: https://github.com/your-username
