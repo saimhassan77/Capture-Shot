@@ -13,7 +13,10 @@ const takeScreenshot = asyncHandler(async (req, res) => {
   }
 
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args:["--no-sandbox", "--disable-setuid-sandbox"],
+    headless:"new"
+  });
   const page = await browser.newPage();
 
   // Locate a website and open
@@ -47,7 +50,7 @@ const takeScreenshot = asyncHandler(async (req, res) => {
 
   setTimeout(async () => {
     await deleteCloudinary(screenshot.public_id)
-  }, 60000)
+  }, 180000)
 
 
   res.status(200).json(new apiResponse(200, screenshot.url, "Screenshot is Successfull"))
