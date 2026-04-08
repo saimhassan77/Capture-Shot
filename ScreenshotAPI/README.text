@@ -21,7 +21,7 @@ A powerful and lightweight API to capture high-quality screenshots of any websit
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/screenshot-api.git
+git clone https://github.com/saimhassan77/Capture-Shot.git
 
 # Navigate into the project
 cd ScreenshotAPI
@@ -68,7 +68,7 @@ Query Parameters:
 Example Request:
 
 ```bash
-http://localhost:5000/api/screenshot
+https://capture-shot-production.up.railway.app/api/v1/screenshot
 {
     "url":"https://example.com",
     "Width": 1280,
@@ -110,4 +110,4 @@ Pull requests are welcome! Feel free to open issues for suggestions or improveme
 👨‍💻 Author
 
 Your Name
-GitHub: https://github.com/your-username
+GitHub: https://github.com/saimhassan77
