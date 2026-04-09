@@ -25,16 +25,17 @@ const takeScreenshot = asyncHandler(async (req, res) => {
   });
   const page = await browser.newPage();
 
-  // Locate a website and open
-  await page.goto(url, {
-    waitUntil: 'networkidle2',
-    timeout: 60000
-  });
-
   // set a width and height
   await page.setViewport({ width: Width, height: Height });
   //width: 412, height: 892 Mobile Size
   //width: 1280, height: 800 Dasktop Size
+
+  // Locate a website and open
+  await page.goto(url, {
+    waitUntil: 'networkidle2', // domcontentloaded
+    timeout: 60000
+  });
+
 
   let toggle = false;
   if (pageSize === "full") {
@@ -56,7 +57,7 @@ const takeScreenshot = asyncHandler(async (req, res) => {
 
   setTimeout(async () => {
     await deleteCloudinary(screenshot.public_id)
-  }, 180000)
+  }, 120000)
 
 
   res.status(200).json(new apiResponse(200, screenshot.url, "Screenshot is Successfull"))
