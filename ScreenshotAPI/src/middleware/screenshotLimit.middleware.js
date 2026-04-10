@@ -5,7 +5,7 @@ import { rateLimit } from 'express-rate-limit'
 const limit = asyncHandler(
     rateLimit({
         windowMs: 60 * 1000, // 1 minute
-        max: 4, // max 5 requests per IP
+        max: 4,
         standardHeaders: true,
         legacyHeaders: false,
         message: {
