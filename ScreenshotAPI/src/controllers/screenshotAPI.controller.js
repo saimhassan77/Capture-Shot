@@ -26,9 +26,11 @@ const takeScreenshot = asyncHandler(async (req, res) => {
   const page = await browser.newPage();
 
   // set a width and height
-  await page.setViewport({ width: Width, height: Height });
-  //width: 412, height: 892 Mobile Size
-  //width: 1280, height: 800 Dasktop Size
+  const width = parseInt(Width);
+  const height = parseInt(Height);
+
+  await page.setViewport({ width, height });
+  // await page.setViewport({ width: Width, height: Height });
 
   // Locate a website and open
   await page.goto(url, {
